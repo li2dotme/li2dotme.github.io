@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<div class="blog-index">  
+    {% for post in site.posts limit:1 %}  
+       <li>  
+         {% assign post = site.posts.first %}
+         {% assign content = post.content %}
+         {% include post_detail.html %}
+	   </li>  
+	{% endfor %}  
+
+</div>
