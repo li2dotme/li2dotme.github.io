@@ -3,26 +3,26 @@ $(function(){
     var dayweek=new Date().getDay();
     switch (dayweek) {
         case 0:
-            $('.sidebar,.search-query').css({  "background": "#4b4b49" });
+            //$('.sidebar,.search-query').css({  "background": "#4b4b49" });
             break;
         case 1:
-            $('.sidebar,.search-query').css({  "background": "#1c5461" });
+            //$('.sidebar,.search-query').css({  "background": "#1c5461" });
             break;
         case 2:
-            $('.sidebar,.search-query').css({  "background": "#3D4F5D" });
+            //$('.sidebar,.search-query').css({  "background": "#3D4F5D" });
             break;
         case 3:
-            $('.sidebar,.search-query').css({  "background": "#273e38" });
+            //$('.sidebar,.search-query').css({  "background": "#273e38" });
             break;
         case 4:
-            $('.sidebar,.search-query').css({  "background": "#3D4F5D" });
+            //$('.sidebar,.search-query').css({  "background": "#3D4F5D" });
             //"color": "#ff0011",parseInt(6*Math.random())
             break;
         case 5:
-            $('.sidebar,.search-query').css({  "background": "#3D4F5D" });
+            //$('.sidebar,.search-query').css({  "background": "#3D4F5D" });
             break;
         case 6:
-            $('.sidebar,.search-query').css({  "background": "#3D4F5D" });
+            //$('.sidebar,.search-query').css({  "background": "#3D4F5D" });
             break;
     }
     //主题星期变换颜色结束
