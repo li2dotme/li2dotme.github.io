@@ -47,10 +47,9 @@ h3 {
 }
 
 .sidebar {
-   // background: #2d3339;
-    //background: rgb(61, 79, 93);
-
-    color: #fff;
+   background-color: #3D4F5D;
+   // background: rgb(61, 79, 93);
+   color: #fff;
 }
 
 .brand-title,
@@ -162,7 +161,25 @@ h3 {
     background: #1c5461;
 }
 
+.post h1 {
+  position: relative;
+  margin: 30px 0 20px;
+  text-rendering: optimizeLegibility;
+}
 
+.post h1:before {
+  display: inline;
+  position: absolute;
+  top: auto;
+  color: #ccc;
+}
+
+@media (min-width: 30.1rem) {
+    .post h1:before {
+      content: "#";
+      left: -1.25em;
+    }
+}
 
 .post-images {
     margin: 1em 0;
@@ -343,6 +360,35 @@ a.pagination-item:hover {
     height: auto;
     border-radius: 2px;
 }
+
+.article h2, h3, h4{
+  position: relative;
+  margin: 30px 0 20px;
+  text-rendering: optimizeLegibility;
+}
+
+.article h2:before, h3:before, h4:before {
+  display: inline;
+  position: absolute;
+  top: auto;
+  color: #ccc;
+}
+
+@media (min-width: 30.1rem) {
+    .article h2:before {
+      content: "#";
+      left: -2em;
+    }
+    .article h3:before {
+      content: "##";
+      left: -2.5em;
+    }
+    .article h4:before {
+      content: "###";
+      left: -3.0em;
+    }
+}
+
 table{
     background: rgba(102, 128, 153, 0.05);
     font-size: 1em;

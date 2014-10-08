@@ -119,10 +119,10 @@ pre code {
     color: #258fb8 !important;
 }
 #toc .top-h2 {
-    padding-left: 12px;
+    padding-left: 4px;
 }
 #toc .top-h3 {
-    padding-left: 24px;
+    padding-left: 34px;
 }
 #toc .top-h4 {          /* weiyi.theme.modify 修改左侧导航栏toc边距 */
     padding-left: 36px;

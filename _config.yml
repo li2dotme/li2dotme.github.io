@@ -64,12 +64,13 @@ future:      true
 # 
 # 表格语法需要特别注意 :-: 中间若有空格，可能不会解析。
 # no_intra_emphasis: do not parse emphasis inside of words 不解析单词间的下划线
-#
+# hard_wrap: newlines
+# 
 # 其它可选的markdown: rdiscount, kramdown, 
 #
 markdown: redcarpet
 redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "quote", "highlight", "tables", "footnotes"]
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "quote", "highlight", "tables", "footnotes", "hard_wrap"]
 highlighter: pygments
     
 

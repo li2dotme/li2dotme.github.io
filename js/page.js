@@ -2,7 +2,7 @@ $(function () {
     $(".article a").attr("target", "_blank");
     $(".brand-title,.brand-tagline,nav").remove();
     $(".headerpic img").css("width", "100px")
-    $('#toc').toc({'container': '.article', 'selectors': 'title,h1,h2,h3,h4', prefix: 'top'});//weiyi.theme.modifys: table of content at left sidebar
+    $('#toc').toc({'container': '.article', 'selectors': 'title,h1,h2,h3', prefix: 'top'});//weiyi.theme.modifys: table of content at left sidebar
     $('.article').each(function (i) {
         $(this).find('img').each(function () {
             if ($(this).parent().hasClass('fancybox')) return;
