@@ -1,137 +1,84 @@
-# This is the default format. 
-# For more see: http://jekyllrb.com/docs/permalinks/
-permalink: /:categories/:title
-
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-
-markdown: kramdown
-
-kramdown:
-  input: GFM
-  auto_ids:      true
-  footnote_nr:   1
-  entity_output: as_char
-  toc_levels:    1..6
-  smart_quotes:  lsquo,rsquo,ldquo,rdquo
-  use_coderay:   true
-
-  coderay:
-    coderay_wrap:              div
-    coderay_line_numbers:      inline
-    coderay_line_number_start: 1
-    coderay_tab_width:         4
-    coderay_bold_every:        10
-    coderay_css:               style
-
-pygments: true
-
-# Themes are encouraged to use these universal variables 
-# so be sure to set them if your theme uses them.
 #
-title : li2
-tagline: 'a programmer'
-author :
-  name : WeiYi Li
-  email : weiyi.just2@gmail.com
-  github : li2
-  twitter : username
-  feedburner : feedname
-
-# The production_url is only used when full-domain names are needed
-# such as sitemap.txt 
-# Most places will/should use BASE_PATH to make the urls
+# weiyi.theme.modify 配置_config.yml
+# 其中定义的变量，可以通过site引用，
+# 比如，/_layouts/blog.html中 {{ site.favicon }} 引用网站图标，
+# 所有硬编码全部通过这种方式引用，如blog.html, post.html, rss.html, tags.md, categories.md, etc. 
+# 部分变量由Jekyll解析，比如 markdown.
 #
-# If you have set a CNAME (pages.github.com) set your custom domain here.
-# Else if you are pushing to username.github.io, replace with your username.
-# Finally if you are pushing to a GitHub project page, include the project name at the end.
-#
-production_url : http://li2.github.io
 
-# All Jekyll-Bootstrap specific configurations are namespaced into this hash
-#
-JB :
-  version : 0.3.0
 
-  # All links will be namespaced by BASE_PATH if defined.
-  # Links in your website should always be prefixed with {{BASE_PATH}}
-  # however this value will be dynamically changed depending on your deployment situation.
-  #
-  # CNAME (http://yourcustomdomain.com)
-  #   DO NOT SET BASE_PATH 
-  #   (urls will be prefixed with "/" and work relatively)
-  #
-  # GitHub Pages (http://username.github.io)
-  #   DO NOT SET BASE_PATH 
-  #   (urls will be prefixed with "/" and work relatively)
-  #
-  # GitHub Project Pages (http://username.github.io/project-name)
-  #
-  #   A GitHub Project site exists in the `gh-pages` branch of one of your repositories.
-  #  REQUIRED! Set BASE_PATH to: http://username.github.io/project-name
-  #
-  # CAUTION:
-  #   - When in Localhost, your site will run from root "/" regardless of BASE_PATH
-  #   - Only the following values are falsy: ["", null, false]
-  #   - When setting BASE_PATH it must be a valid url.
-  #     This means always setting the protocol (http|https) or prefixing with "/"
-  BASE_PATH : false
+title:              li2
+description:        
+disqus_shortname: 
+url:                http://li2.me
 
-  # By default, the asset_path is automatically defined relative to BASE_PATH plus the enabled theme.
-  # ex: [BASE_PATH]/assets/themes/[THEME-NAME]
-  #
-  # Override this by defining an absolute path to assets here.
-  # ex: 
-  #   http://s3.amazonaws.com/yoursite/themes/watermelon
-  #   /assets
-  #
-  ASSET_PATH : false
+# url_tags必须和tags.md中的permalink定义相同，这样定义的原因是不希望permalink中包含文件类型后缀。
+# 或者tags.md中不定义permalink，这里直接引用tags.md的在目录中的绝对地址。
+# 其它几个url也需要遵循这个原则。
+# 
+url_tags:           /tags/
+url_categories:     /categories/
+url_timeline:       /timeline/
+url_rss:            /rss/
+url_about:          /about/
 
-  # These paths are to the main pages Jekyll-Bootstrap ships with.
-  # Some JB helpers refer to these paths; change them here if needed.
-  #
-  archive_path: /archive.html
-  categories_path : /categories.html
-  tags_path : /tags.html
-  atom_path : /atom.xml
-  rss_path : /rss.xml
+production_url:     http://li2.me           # production_url是sitemap生成的url,方便百度谷歌收录.
+favicon:            /images/favicon.ico
+# back_to_top:      /images/back_to_top.png # JekyllPure.css不能引用{{site.}}???
 
-  # Settings for comments helper
-  # Set 'provider' to the comment provider you want to use.
-  # Set 'provider' to false to turn commenting off globally.
-  #
-   
-  # Settings for analytics helper
-  # Set 'provider' to the analytics provider you want to use.
-  # Set 'provider' to false to turn analytics off globally.
-  #        
-  analytics :
-    provider : google 
-    google : 
-        tracking_id : 'UA-123-12'
-    getclicky :
-      site_id : 
-    mixpanel :
-        token : '_MIXPANEL_TOKEN_'
-    piwik :
-        baseURL : 'myserver.tld/piwik' # Piwik installation address (without protocol)
-        idsite : '1'                   # the id of the site on Piwik
 
-  # Settings for sharing helper. 
-  # Sharing is for things like tweet, plusone, like, reddit buttons etc.
-  # Set 'provider' to the sharing provider you want to use.
-  # Set 'provider' to false to turn sharing off globally.
-  #
-  sharing :
-    provider : false
-    
-  # Settings for all other include helpers can be defined by creating 
-  # a hash with key named for the given helper. ex:
-  #
-  #   pages_list :
-  #     provider : "custom"   
-  #
-  # Setting any helper's provider to 'custom' will bypass the helper code
-  # and include your custom code. Your custom file must be defined at:
-  #   ./_includes/custom/[HELPER]
-  # where [HELPER] is the name of the helper you are overriding.
+# Owner/Author information
+author:
+  name:             weiyi.li
+  avatar:           /images/avatar.png
+  email:            weiyi.just2@gmail.com
+  # Social networking links used in footer. Update and remove as you like.
+  github:           https://github.com/li2/
+  weibo:            
+  douban: 
   
+  
+# Background image to be tiled on all pages
+background: 
+
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title/
+relative_permalinks: false
+
+
+# Amount of post to show on home page
+paginate: 5
+
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    Asia/Shanghai
+future:      true
+          
+
+# weiyi.theme.modify markdown设置
+# redcarpet extensions 含义参考 https://github.com/vmg/redcarpet
+# 选择它的主要原因是，支持```language```语法，用来标记代码块，不需要缩进4个空格。
+# 另外还支持脚注、文本高亮、删除线等扩展的markdown语法，
+# 需要加入extensions列表才能开启或关闭相应功能。
+# 
+# 表格语法需要特别注意 :-: 中间若有空格，可能不会解析。
+# no_intra_emphasis: do not parse emphasis inside of words 不解析单词间的下划线
+#
+# 其它可选的markdown: rdiscount, kramdown, 
+#
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "quote", "highlight", "tables", "footnotes"]
+highlighter: pygments
+    
+
+# Analytics and webmaster tools stuff goes here
+google_analytics:   
+google_verify:      
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:         
+
+
+include: []
+exclude: ["README.md"]
