@@ -3,7 +3,7 @@ layout: post
 title: Android App开发入门训练
 filename: 2014-09-01-navigation.md
 category: ANDROID
-tags: [  ]
+tags: [ ]
 
 ---
 
@@ -13,3 +13,5 @@ tags: [  ]
 li2学习计划跟踪 2014-09-01 18:14
  
 ## 入门指南 Getting Started
+
+<!-- more -->

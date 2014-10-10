@@ -1,10 +1,9 @@
 ---
 layout: post
-title: li2 is studying Android 从远程FTP服务器下载文件到本地
+title: Android APP - 从远程FTP服务器下载文件到本地
 filename: 2014-04-25-从远程FTP服务器下载文件到本地.md
 category: ANDROID
-tags: [  ]
-
+tags: [ ]
 ---
 
 2014年4月24日~2014年4月25日
@@ -38,6 +37,7 @@ tags: [  ]
 - 屏幕灭的broadcast;
 - 由系统调用的 onDestroy()方法。
 
+<!-- more -->
 
 ## 搭建测试用FTP服务器
 

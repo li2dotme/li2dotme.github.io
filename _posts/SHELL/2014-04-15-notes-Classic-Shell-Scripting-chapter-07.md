@@ -3,12 +3,8 @@ layout: post
 title: Shell脚本学习指南笔记-第07章-输入输出-文件与命令执行
 filename: 2014-04-15-notes-Classic-Shell-Scripting-chapter-07.md
 category: SHELL
-tags:
-    - 
+tags: []
 ---
-
-* toc list
-{:toc}
 
 本章的主要内容：
 如何处理输入/输出；
@@ -16,12 +12,11 @@ tags:
 引用；
 命令执行顺序，内建shell命令；
 
-## 第7章 输入/输出、文件与命令执行
+ 
+## 使用read读取行
 
 ------
- 
-### 使用read读取行
-------
+
 `read [-r] variable ...`
 读取标准输入，通过shell内部的字段切割器`$IFS`进行切分，按顺序赋值给变量列表variable...
  
@@ -33,44 +28,54 @@ tags:
  
 使用简单的循环处理/etc/passwd：
  
-    while IFS=: read user pass uid gid fullname homedir shell
-    do
-        ...     处理每行的用户记录
-    done < /etc/passwd
+```bash
+while IFS=: read user pass uid gid fullname homedir shell
+do
+    ...     处理每行的用户记录
+done < /etc/passwd
+```
  
 这个循环并不是说“当IFS等于冒号时，便读取……”，而是通过IFS的设置，让read使用冒号作为字段分隔符。仅改变read所继承环境的IFS值，不改变循环体里使用的IFS值。参考“表6-3：POSIX内置的shell变量”。
- 
-    # 重定向的错误用法，每次循环时，shell会再次打开/etc/passwd，即每次都只读取文件的第一行。
-    while IFS=: read user pass uid gid fullname homedir shell < /etc/passwd
-    do
-        ...     处理每行的用户记录
-    done
- 
-    # 比较容易读取，但使用cat会损失一点效率。
-    cat /etc/passwd |
-    while IFS=: read user pass uid gid fullname homedir shell
-    do
-        ...     处理每行的用户记录
-    done
+
+```bash
+# 重定向的错误用法，每次循环时，shell会再次打开/etc/passwd，即每次都只读取文件的第一行。
+while IFS=: read user pass uid gid fullname homedir shell < /etc/passwd
+do
+    ...     处理每行的用户记录
+done
+
+# 比较容易读取，但使用cat会损失一点效率。
+cat /etc/passwd |
+while IFS=: read user pass uid gid fullname homedir shell
+do
+    ...     处理每行的用户记录
+done
+```
+
+<!-- more -->
  
 通过管道把命令的输出传递给read，这个技巧当read用在循环中时，格外有用：
  
-    # 第3章 使用此脚本来复制整个目录树
-    find /home/testuser/ -type d -print         |  输出指定路径下的目录名称列表，一行一个打印
-        sed 's;/home/testuser/;/home/backup/;'  |  修改目录名称，这里使用分号作为界定符
-            sed 's/^/mkdir /'                   |  插入mkdir命令
-                sh -x                              以shell跟踪模式执行
-    # 使用循环可以容易地完成，而且从程序员角度看更自然
-    find /home/testuser/ -type d -print         |  输出指定路径下的目录名称列表，一行一个打印
-        sed 's;/home/testuser/;/home/backup/;'  |  修改目录名称，这里使用分号作为界定符
-            while read newdir
-            do
-                mkdir $newdir 
-            done
- 
- 
-### 重定向
+```bash
+# 第3章 使用此脚本来复制整个目录树
+find /home/testuser/ -type d -print         |  输出指定路径下的目录名称列表，一行一个打印
+    sed 's;/home/testuser/;/home/backup/;'  |  修改目录名称，这里使用分号作为界定符
+        sed 's/^/mkdir /'                   |  插入mkdir命令
+            sh -x                              以shell跟踪模式执行
+# 使用循环可以容易地完成，而且从程序员角度看更自然
+find /home/testuser/ -type d -print         |  输出指定路径下的目录名称列表，一行一个打印
+    sed 's;/home/testuser/;/home/backup/;'  |  修改目录名称，这里使用分号作为界定符
+        while read newdir
+        do
+            mkdir $newdir 
+        done
+```
+
+
+## 重定向
+
 ------
+
 `set -C` 打开shell的禁止覆盖（noclobber）选项，防止文件被意外截断。
 所以当`>`重定向到打开此功能的文件时失败。而`>|`可忽略此选项。
  
@@ -91,8 +96,11 @@ TODO
 **使用exec在当前shell下执行指定程序**
 TODO
  
-### printf的完整介绍
+
+## printf的完整介绍
+
 ------
+
 ` printf  "format-string"  [argumens ...] `
  
 printf对转义序列的处理：
@@ -103,8 +111,10 @@ printf对转义序列的处理：
 更多细节查阅P162.
  
  
-### 波浪号展开与通配符
+## 波浪号展开与通配符
+
 ------
+
 shell有两种与文件名相关的展开：
  
 - 波浪号展开（tilde expansion）
@@ -135,43 +145,54 @@ shell有两种与文件名相关的展开：
 **点号开头的隐藏文件只是习惯用法，kernel不认为与其它文件有不同。**
  
  
-### 命令置换（command substitution）
+## 命令置换（command substitution）
+
 ------
+
 “命令置换”本身是可执行的shell命令，shell执行该命令后，用结果替换命令本身。命令置换 有两种形式： P170
  
  
 - 使用反引号（或称重音符号`），把要执行的命令框住，但和双引号混合使用时，变得复杂不易阅读；
 -  使用`$()`
-          $ echo "outer + $(echo inner - $(echo "nested quote here")  - inner) + outer"
-           outer + inner - nested quote here - inner + outer
+
+    ```bash
+    $ echo "outer + $(echo inner - $(echo "nested quote here")  - inner) + outer"
+    outer + inner - nested quote here - inner + outer
+    ```
  
 **使用for循环比较不同目录下的相同文件的差异（比如版本比较）**
  
-    for i in $(cd /old/code/dir ; echo *.c)     产生/old/code/dir下的文件列表
-    do                                       
-        diff -c /new/code/dir/$i $i             新版本与旧版本比较
-    done | more
+```bash
+for i in $(cd /old/code/dir ; echo *.c)     产生/old/code/dir下的文件列表
+do                                       
+    diff -c /new/code/dir/$i $i             新版本与旧版本比较
+done | more
+```
  
 **为head命令使用sed**
  
-    # head -- 打印前n行
-    # P68， 版本1：  head N file
-    count=$1
-    sed ${count}q "$2"
- 
-    # P172，版本2：  head -N file
-    # 当以head -10 foo.xml调用这个脚本时，最终以sed 10q foo.xml被调用。
-    count=$(echo $1 | sed 's/^-//')
-    shift
-    sed ${count}q "$@"
+```bash
+# head -- 打印前n行
+# P68， 版本1：  head N file
+count=$1
+sed ${count}q "$2"
+
+# P172，版本2：  head -N file
+# 当以head -10 foo.xml调用这个脚本时，最终以sed 10q foo.xml被调用。
+count=$(echo $1 | sed 's/^-//')
+shift
+sed ${count}q "$@"
+```
  
 **创建邮件列表**
 **简易数学expr**
 TODO
  
  
-### 引用
+## 引用
+
 ------
+
 引用（quoting）是用来防止shell将某些你想要的东西解释成不同的意义。P176
  
 **反斜杠转义**
@@ -180,29 +201,37 @@ TODO
 **单引号**
 强制将单引号之间的所有字符看作字面上的意义。**当你希望shell完全不做任何处理时，使用单引号。**
  
-    $ echo 'here are some metacharacters: * ? [abc] $x \*'
-    here are some metacharacters: * ? [abc] $x \*
+```bash
+$ echo 'here are some metacharacters: * ? [abc] $x \*'
+here are some metacharacters: * ? [abc] $x \*
+```
  
 **双引号**
 双引号，也把括起来的字符序列看作一个字符串，但不同于单引号的是，会确切地处理括起来的转义字符、变量、算术、命令置换。**当你希望将多个串视为一个串，同时需要shell做些处理的时候，使用双引号。**
  
-    $ name="I'm li2."
-    $ echo "\$name is \"$name\", '$(echo Hello World.)'"
-    $name is "I'm li2.", 'Hello World.'
+```bash
+$ name="I'm li2."
+$ echo "\$name is \"$name\", '$(echo Hello World.)'"
+$name is "I'm li2.", 'Hello World.'
+
+oldvar="$oldvar $newvar"    将newvar的值附加到oldvar变量后。
+```
+
  
-    oldvar="$oldvar $newvar"    将newvar的值附加到oldvar变量后。
- 
- 
-### 执行顺序与eval
+## 执行顺序与eval
+
 ------
+
 好像是在讲shell程序的解释器，就像c语言的解释器怎么去读取c语言一样。P177
 **eval语句**
 **subShell与代码块**
 TODO
  
  
-### 内建命令（built-in）
+## 内建命令（built-in）
+
 ------
+
 由shell本身执行命令，而不是在另外的进程中执行外部程序。P183
  
 表7-9：POSIX的Shell内建命令
@@ -243,47 +272,44 @@ TODO
 命令查找的次序：special-built-in > shell function > regular-built-in > external
 这种查找顺序允许定义shell function以代替regular-built-in。
  
-    # 更改路径时，shell的提示号能包含当前路径的最后一部分。
-    # 因此定义一个cd函数，完成这件事情。
-    ~/shellstudy$ cat cd
-    cd () {
-        command cd "$@"    #command使shell可以访问系统cd命令，以避免调用时递归，导致Segmentation fault.
-        x=$(pwd)
-        printf "Built-in Commands: \$PWD=%s\n" $x
-        PS1="${x##*/}\$ "
-        printf "Built-in Commands: \$PS1=%s\n" $PS1
-    }
-    cd "$@"
- 
-    # 执行结果
-    ~/shellstudy$ ./cd $HOME
-    Built-in Commands: $PWD=/home/weiyi
-    Built-in Commands: $PS1=weiyi$
- 
-    # 脚本执行后，在console中打印，对比上述：脚本也只是console的一个子进程
-    ~/shellstudy$ echo $PWD
-    /home/weiyi/shellstudy
- 
-    weiyi@MitacRD1:~/shellstudy$ echo $PS1
-    \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\$
+```bash
+# 更改路径时，shell的提示号能包含当前路径的最后一部分。
+# 因此定义一个cd函数，完成这件事情。
+~/shellstudy$ cat cd
+cd () {
+    command cd "$@"    #command使shell可以访问系统cd命令，以避免调用时递归，导致Segmentation fault.
+    x=$(pwd)
+    printf "Built-in Commands: \$PWD=%s\n" $x
+    PS1="${x##*/}\$ "
+    printf "Built-in Commands: \$PS1=%s\n" $PS1
+}
+cd "$@"
+
+# 执行结果
+~/shellstudy$ ./cd $HOME
+Built-in Commands: $PWD=/home/weiyi
+Built-in Commands: $PS1=weiyi$
+
+# 脚本执行后，在console中打印，对比上述：脚本也只是console的一个子进程
+~/shellstudy$ echo $PWD
+/home/weiyi/shellstudy
+
+weiyi@MitacRD1:~/shellstudy$ echo $PS1
+\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\$
+```
  
 当shell函数需要被多个脚本调用时，可以将它们放在单独的文件中，该文件只要能够读取即可。在其它脚本中以点号`.`来引用。
  
  
  
 ## 第8章 产生脚本
+
 ------
- 
-------
- 
+
 前7章是各种小例子示范，而第8章是一个复杂的程序。就好象给你讲完了四则运算，然后考你微积分。
 TODO
 
 
-
-
 ## 版本
-
-------
 li2 于上海闸北 
 2014-04-15 ~ 2014-05-15, v1
