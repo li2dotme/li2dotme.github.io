@@ -1,3 +1,11 @@
+---
+layout: post
+title: 第一次开发iOS App的总结笔记
+filename: 2014-12-17-first-iOS-app-summarize.md
+category: iOS
+tags: [ ]
+---
+
 第一次开发iOS App的总结笔记
 
 1. 实现网格视图，类似于照片预览，iOS可以通过CollectionView实现，android可以通过gird view实现（todo）；
