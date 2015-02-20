@@ -48,7 +48,8 @@ relative_permalinks: false
 
 
 # Amount of post to show on home page
-paginate: 5
+paginate: 3
+paginate_path: "/page:num"
 
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
