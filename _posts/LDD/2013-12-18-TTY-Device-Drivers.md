@@ -1,6 +1,6 @@
 ---
 layout: post
-title: TTY设备驱动程序
+title: 【笔记】TTY设备驱动程序
 filename: 2013-12-18-TTY-Device-Drivers.md
 category: LDD
 tags: [  ]
@@ -21,7 +21,7 @@ TTY 设备驱动程序的内核数据结构定义 struct tty_driver, 开发针�
 - 设备号非常重要，打开设备时，通过设备号获取驱动和索引号（该设备是驱动管理的第几个设备）；得到驱动后通过索引号查找该驱动管理的设备实例 tty_struct;
 - TODO 线路规程
 
-
+<!-- more -->
 
 ## tty_driver 的注册过程
 

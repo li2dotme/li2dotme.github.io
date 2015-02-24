@@ -1,6 +1,6 @@
 ---
 layout: post
-title: I/O体系结构（设备文件的标准I/O操作）
+title: 【笔记】I/O体系结构（设备文件的标准I/O操作）
 filename: 2013-12-18-IO-Architecture-and-Cdev-Standard-Operations.md
 category: LDD
 tags: [  ]
@@ -19,6 +19,7 @@ tags: [  ]
 > 
 > ![LKA-6.1-Figure6.1-Layer-model-for-addressing-peripherals](/images/LDD/LKA-6.1-Figure6.1-Layer-model-for-addressing-peripherals.png)
 
+<!-- more -->
 
 ## 文件I/O的标准库定义
 

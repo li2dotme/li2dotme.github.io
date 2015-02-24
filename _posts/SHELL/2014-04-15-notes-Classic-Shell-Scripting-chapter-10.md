@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Shell脚本学习指南笔记-第10章-文件处理
+title: 【笔记】Shell脚本学习指南-第10章-文件处理
 filename: 2014-04-15-notes-Classic-Shell-Scripting-chapter-10.md
 category: SHELL
 tags: []
@@ -17,6 +17,8 @@ tags: []
 ls -liRs *          显示文件（冗长的、inode编号、递归的、以块为单位列出文件的大小）
 ``` 
  
+<!-- more -->
+
 ## 寻找文件
 
 ------
@@ -32,8 +34,6 @@ locate将系统里的所有文件名压缩成数据库，以迅速找到匹配sh
 $ type awk
 awk is hashed (/usr/bin/awk)
 ```
-
-<!-- more -->
 
 ### find命令
 

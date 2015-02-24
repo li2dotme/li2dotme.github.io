@@ -1,15 +1,15 @@
 ---
 layout: post
-title: Shell脚本学习指南笔记-第06章-变量-判断-重复动作
+title: 【笔记】Shell脚本学习指南-第06章-变量-判断-重复动作
 filename: 2014-04-15-notes-Classic-Shell-Scripting-chapter-06.md
 category: SHELL
 tags: []
 ---
 
-
 流程控制的功能造就了程序语言：如果只是命令语句，是不可能完成任何工作的。本章介绍了用来测试结果、根据结果作出判断、加入循环、函数的功能。
 
- 
+<!-- more -->
+
 ## 变量与算术
 
 ------
@@ -41,8 +41,6 @@ ${varname:+word}    返回word；否则，返回NULL。用于测试变量存在�
 ```
  
 位置参数（positional parameter），又称命令行参数
-
-<!-- more -->
  
 ```bash 
 P132 表6-3：POSIX内置的shell变量

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: Linux设备驱动程序开发参考书目
 filename: 2013-12-18-Linux-Device-Drivers-Refer-Books.md
 category: LDD

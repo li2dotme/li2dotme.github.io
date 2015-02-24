@@ -20,6 +20,8 @@ Shell进程相关问题汇总。
 0       8       *       *       1-5     root    shutdown -r now
 ```
 
+<!-- more -->
+
 或者把命令放在脚本中，这样修改时就无需动crontab文件：
 
 ``` bash
@@ -37,8 +39,6 @@ if [ $day -lt 6 ] ; then
     shutdown -r now
 fi
 ```
-
-<!-- more -->
 
 参考
 

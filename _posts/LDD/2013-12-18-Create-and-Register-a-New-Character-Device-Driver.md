@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 创建并注册一个新的字符设备驱动程序
+title: 【笔记】创建并注册一个新的字符设备驱动程序
 filename: 2013-12-18-Create-and-Register-a-New-Character-Device-Driver.md
 category: LDD
 tags:
@@ -23,6 +23,8 @@ tags:
  
  
 ## 字符设备注册到内核的过程
+
+<!-- more -->
 
 kernel/fs/char_dev.c
 步骤：

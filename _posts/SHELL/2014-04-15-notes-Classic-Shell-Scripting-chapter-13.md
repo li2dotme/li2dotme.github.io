@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Shell脚本学习指南笔记-第13章-进程
+title: 【笔记】Shell脚本学习指南-第13章-进程
 filename: 2014-04-15-notes-Classic-Shell-Scripting-chapter-13.md
 category: SHELL
 tags: []
@@ -8,7 +8,9 @@ tags: []
 
 进程（process）是执行中程序的一个实例（instance）。涉及的概念：时间片段（time slice）、文本切换（context switches）、调度器（scheduler）、平均负载（load average）。详见操作系统类书籍。
 本章只说明如何建立进程、列出进程、删除进程、传递信号给进程、监控进程。P363
- 
+  
+<!-- more --> 
+
 [英文版下载地址](http://files.cosmicduck.net/public_uploads/Classic_Shell_Scripting.pdf)
  
  
@@ -40,8 +42,7 @@ ABRT（中断），HUP（搁置），KILL，TERM（终结）。TODO
  
 **捕捉进程信号**
 `man -a signal` 查看所有关于信号的手册页
- 
-<!-- more --> 
+
  
 ## 进程系统调用的追踪
 

@@ -1,6 +1,6 @@
 ---
-layout: page
-title: Linux设备驱动程序
+layout: post
+title: 【笔记】Linux设备驱动程序
 filename: 2013-12-18-Linux-Device-Drivers.md
 category: LDD
 tags: [  ]

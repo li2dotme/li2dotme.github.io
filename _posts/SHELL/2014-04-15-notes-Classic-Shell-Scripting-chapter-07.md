@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Shell脚本学习指南笔记-第07章-输入输出-文件与命令执行
+title: 【笔记】Shell脚本学习指南-第07章-输入输出-文件与命令执行
 filename: 2014-04-15-notes-Classic-Shell-Scripting-chapter-07.md
 category: SHELL
 tags: []
@@ -11,7 +11,8 @@ tags: []
 命令替换，如何使一个命令的输出作为参数；
 引用；
 命令执行顺序，内建shell命令；
-
+ 
+<!-- more -->
  
 ## 使用read读取行
 
@@ -25,7 +26,7 @@ tags: []
 - 若使用选项`-r`，行尾的`\`仅作字面意义，赋值给变量。
 - 若在管道中使用read，那么会在新的进程内执行该shell命令，任何read设置的变量，不能被父shell使用。
   管道中间内的循环也是这样。**父子shell  subshell**  TODO
- 
+
 使用简单的循环处理/etc/passwd：
  
 ```bash
@@ -51,8 +52,6 @@ do
     ...     处理每行的用户记录
 done
 ```
-
-<!-- more -->
  
 通过管道把命令的输出传递给read，这个技巧当read用在循环中时，格外有用：
  

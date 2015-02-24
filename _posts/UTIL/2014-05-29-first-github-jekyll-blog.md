@@ -7,9 +7,6 @@ tags:
     - GitHub
 ---
 
-* toc list
-{:toc}
-
 ## GitHub使用入门指南
 
 ------
@@ -18,7 +15,6 @@ tags:
 - [GitHub Help: Set Up Git](https://help.github.com/articles/set-up-git)
 - [GitHub Help: Create A Repo](https://help.github.com/articles/create-a-repo)
 - [助你入门 git 的简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)
-
 
 
 ## GitHub Pages
@@ -32,6 +28,8 @@ tags:
 通过Jekyll。
 
 ### Jekyll是什么？
+
+<!-- more -->
 
 以下内容引用自[《像黑客一样写博客——Jekyll入门》by Mort](http://www.soimort.org/posts/101/)
 

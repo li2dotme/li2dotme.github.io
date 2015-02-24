@@ -13,6 +13,8 @@ tags: [ ]
 阅读源码、学习及调试：先建立一个临时的ftp，理清代码的整个执行流程；然后使用正确的ftp完成工作。
 涉及知识：android Runnable, Thread, Broadcast, Service. TODO
 
+<!-- more -->
+
 ------
 
 ## 程序设计流程
@@ -36,8 +38,6 @@ tags: [ ]
 - wifi停止的broadcast;
 - 屏幕灭的broadcast;
 - 由系统调用的 onDestroy()方法。
-
-<!-- more -->
 
 ## 搭建测试用FTP服务器
 
