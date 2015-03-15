@@ -9,8 +9,7 @@ tags: [ ]
 
 **UI Fragment可以管理界面，整屏或部分。有自己的布局文件，包含了用户可以交互的可视化UI元素。**
 用UI Fragment将应用的UI分解成块，利用一个个构建块，很容易做到构建分页界面、动画侧边栏界面等更多其他定制界面。
-Fragment不具有在屏幕上显示视图的能力。因此，只有将它的视图放置在activity
-的视图层级结构中（称之为**托管UI Fragment**），fragment视图才能显示在屏幕上。
+Fragment不具有在屏幕上显示视图的能力。因此，只有将它的视图放置在activity的视图层级结构中（称之为**托管UI Fragment**），fragment视图才能显示在屏幕上。
 
 在activity代码中添加fragment, 可以在运行时控制fragment,我们可以决定何时将fragment添加到activity中以及随后可以完成何种具体任务；也可以移除fragment，用其他fragment代替当前fragment，然后再重新添加已移除的fragment。
 
@@ -40,17 +39,17 @@ public class CrimeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-	mCrime = new Crime();
+        mCrime = new Crime();
     }
 
     @Override
     // 由onCreateView方法生成fragment的视图
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_crime, parent, false);
-	// 调用View.findViewById(int)
-	mTitleField = (EditText)v.findViewById(R.id.crime_title);
-	// 监听器方法设置和activity一样
-	mTitleField.addTextChangedListener(new TextWathcer() {
+        // 调用View.findViewById(int)
+        mTitleField = (EditText)v.findViewById(R.id.crime_title);
+        // 监听器方法设置和activity一样
+        mTitleField.addTextChangedListener(new TextWathcer() {
 	    public void onTextChanged(...) {}
 	    public void beforeTextChanged(...) {}
 	    public void afterTextChanged(...) {}
@@ -74,21 +73,21 @@ public class CrimeActivity extends FragmentActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-	setContentView(R.layout.activity_crime);
+        setContentView(R.layout.activity_crime);
 
-	FragmentManager fm = getSupportFragmentManager();
+        FragmentManager fm = getSupportFragmentManager();
 
-	// 使用R.id.fragmentContainer的容器视图资源ID，向FragmentManager请求获取fragment。如要获取的fragment在队列中已经存在，FragmentManager随即会将之返还。
-	Fragment fragment = fm.findFragmentById(R.id.fragmentContainer);
+        // 使用R.id.fragmentContainer的容器视图资源ID，向FragmentManager请求获取fragment。如要获取的fragment在队列中已经存在，FragmentManager随即会将之返还。
+        Fragment fragment = fm.findFragmentById(R.id.fragmentContainer);
 	
-	// 如指定容器视图资源ID的fragment不存在，则fragment变量为空值。这时应创建一个新的CrimeFragment，并开启一个新的fragment事务(transaction)，然后在事务里将新建的fragment添加到队列中。
-	if (fragment == null) {
-	    fragment = new CrimeFragment();
-	    // 创建一个新的fragment事务，加入一个添加操作，然后提交该事物。
-	    fm.beginTransaction()
-	        .add(R.id.fragmentContainer, fragment)
-		.commit();
-	}
+        // 如指定容器视图资源ID的fragment不存在，则fragment变量为空值。这时应创建一个新的CrimeFragment，并开启一个新的fragment事务(transaction)，然后在事务里将新建的fragment添加到队列中。
+        if (fragment == null) {
+            fragment = new CrimeFragment();
+            // 创建一个新的fragment事务，加入一个添加操作，然后提交该事物。
+            fm.beginTransaction()
+                .add(R.id.fragmentContainer, fragment)
+                .commit();
+        }
     }
 }
 ```

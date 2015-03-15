@@ -24,6 +24,7 @@ DDMS透视图（ Dalvik Debug Monitor Service，调试监控服务工具），�
 可以查看异常及其**栈追踪(stack trace)**（应该是指方法的调用信息）. 
 一般情况下，在LogCat中寻找最后一个异常及其栈追踪信息的第一行（该行记录发生异常的类、方法、源文件、代码行号）。
 对于非崩溃型的异常（比如代码逻辑错误），只能在可能导致问题的地方：
+
 - 主动抛出异常，用于查看某个方法的栈追踪；
 - 利用调试器设置合适的断点。
 
@@ -198,7 +199,7 @@ setResult(resultCode, intent);
     android:label="@string/app_name" >
     <intent-filter>
         <action android:name="android.intent.action.MAIN" />
-	<category android:name="android.intent.category.LAUNCHER" />
+        <category android:name="android.intent.category.LAUNCHER" />
     </intent-filter>
 </activity>
 ```

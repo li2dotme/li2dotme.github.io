@@ -19,7 +19,7 @@ protected void onCreate(Bundle savedInstanceState) {
     // 确保actionbar在Honeycomb或更高版本的设备上运行应用才会被调用
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
         ActionBar actionBar = getActionBar();
-	actionBar.setSubtitle("title");
+        actionBar.setSubtitle("title");
     }
 }
 ```
