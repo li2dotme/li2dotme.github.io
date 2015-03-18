@@ -412,3 +412,8 @@ table tr:nth-of-type(2n) {
     zoom: 1;
     margin: 10px 10px;
 }
+
+img[alt="image"] { 
+  max-width:  400px; 
+  display: block;
+}
