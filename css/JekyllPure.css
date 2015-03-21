@@ -413,7 +413,9 @@ table tr:nth-of-type(2n) {
     margin: 10px 10px;
 }
 
-img[alt="image"] { 
-  max-width:  400px; 
+img[alt="image"] {
+  max-width: 400px; 
   display: block;
+  margin-left: auto;
+  margin-right:auto;
 }
