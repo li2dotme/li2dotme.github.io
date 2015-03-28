@@ -33,13 +33,13 @@ fatal: Could not read from remote repository.
 
 ```sh
 # GitHub Account 1
-Host github.1	 // 这个名字在稍后用来测试连接：ssh -T git@github.1
+Host github-as-user1	// 这个名字在稍后用来测试连接：ssh -T git@github-as-user1
     HostName github.com
     PreferredAuthentications publickey
     IdentityFile ~/.ssh/id_rsa_1
 
 # GitHub Account 2
-Host github.2
+Host github-as-user2
     HostName github.com
     PreferredAuthentications publickey
     IdentityFile ~/.ssh/id_rsa_2
@@ -56,12 +56,28 @@ ssh-keygen -t rsa -f ~/.ssh/id_rsa_work -C "your@mail.com"
 [git生成ssh key及本地解决多个ssh key的问题](http://riny.net/2014/git-ssh-key/)
 
 
-## [git push前需要切换ssh key](http://stackoverflow.com/a/18725082/2722270)
+## 多个key存在时，可能会push到错误的key账号
+
+假如Github用户`user1`把本地代码添加到一个远程仓库`whatever.git`,并且命名为`origin`，
 
 ```sh
-ssh-add ~/.ssh/id_rsa_1
-git push
+git remote add origin git@github.com:user1/whatever.git
 ```
+
+参考我们上面配置的`~/.ssh/config`，可以把这行命令改写为：
+
+```sh
+git remote add gb-user1 git@github-as-user1:user1/whatever.git
+```
+想要提交`master`分支到`user1/whatever`仓库时，就可以执行`git push gh-user1 master`.
+
+`gh-user1`是**[远程仓库在本地的简称](http://git-scm.com/book/zh/v1/Git-基础-远程仓库的使用#远程仓库的删除和重命名)**，可以改为你想要的名字，越简单明了越好，假如出现
+> fatal: remote gh-user1 already exists
+
+可以`git remote rm gh-user1`
+
+解决办法参考：
+[How to work with multiple ssh keys](http://stackoverflow.com/a/8924826/2722270)
 
 *整理于2015-03-28*
 
