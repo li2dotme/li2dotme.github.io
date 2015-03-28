@@ -19,11 +19,11 @@ Fragment不具有在屏幕上显示视图的能力。因此，只有将它的视
 
 ```xml
 activity_crime.xml
-<FragmeLayout xmlns:android:"https://schemas.android.com/apk/res/android"
-  android:id="@+id/fragmentContainer"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  />
+<FragmeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragmentContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    />
 ```
 但此时，activity还未托管fragment，所以代码运行后UI看不到任何内容。接下来需要编写代码，**创建UI Fragment**，覆写fragment的生命周期函数（几乎对应到activity的声明周期函数）。
 
