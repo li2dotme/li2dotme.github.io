@@ -52,8 +52,16 @@ ssh-keygen -t rsa -f ~/.ssh/id_rsa_work -C "your@mail.com"
 ```
 
 参考：
-[Multiple GitHub Accounts & SSH Config](http://stackoverflow.com/questions/3225862/multiple-github-accounts-ssh-config/29315364#29315364)
+[Multiple GitHub Accounts & SSH Config](http://stackoverflow.com/a/17158985/2722270)
 [git生成ssh key及本地解决多个ssh key的问题](http://riny.net/2014/git-ssh-key/)
+
+
+## [git push前需要切换ssh key](http://stackoverflow.com/a/18725082/2722270)
+
+```sh
+ssh-add ~/.ssh/id_rsa_1
+git push
+```
 
 *整理于2015-03-28*
 
