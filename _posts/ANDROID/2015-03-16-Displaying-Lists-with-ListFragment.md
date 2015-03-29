@@ -41,7 +41,7 @@ CrimeLab 类的构造方法需要一个 Context 参数。使用 Context参数,�
 
 
 ## 创建 ListFragment
-ListFragment 继承自 Fragment, 默认具有一个全屏的 ListView 布局。
+ListFragment 继承自 Fragment, 默认具有一个全屏的 ListView 布局。它的`onCreate()`方法继承自`Fragment`.
 
 ```Java
 // CrimeListFragment.java
