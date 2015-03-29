@@ -48,7 +48,7 @@ Host github-as-user2
 特别需要注意的是，此时`~/.ssh/`路径下可能没有`id_rsa_1`文件，所以**在生成ssh key的命令中，需要加`-f`选项指明文件，会新建不存在的文件，如果你尝试手动建立这个文件的话，[会出现问题](http://stackoverflow.com/a/29315364/2722270)**：
 
 ```sh
-ssh-keygen -t rsa -f ~/.ssh/id_rsa_work -C "your@mail.com"
+ssh-keygen -t rsa -f ~/.ssh/id_rsa_work -C "weiyi.just2@gmail.com"
 ```
 
 参考：
@@ -71,7 +71,7 @@ git remote add gb-user1 git@github-as-user1:user1/whatever.git
 ```
 想要提交`master`分支到`user1/whatever`仓库时，就可以执行`git push gh-user1 master`.
 
-`gh-user1`是**[远程仓库在本地的简称](http://git-scm.com/book/zh/v1/Git-基础-远程仓库的使用#远程仓库的删除和重命名)**，可以改为你想要的名字，越简单明了越好，假如出现
+`gh-user1`是**[远程仓库在本地的简称](http://git-scm.com/book/zh/v1/Git-基础-远程仓库的使用#远程仓库的删除和重命名)**，可以改为你想要的名字，越简单明了越好，比如`li2.me`，假如出现
 > fatal: remote gh-user1 already exists
 
 可以`git remote rm gh-user1`
