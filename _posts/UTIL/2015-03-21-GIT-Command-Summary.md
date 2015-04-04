@@ -81,6 +81,25 @@ git remote add gb-user1 git@github-as-user1:user1/whatever.git
 
 *整理于2015-03-28*
 
+## 全局性地更换电子邮件地址
+
+```sh
+$ git filter-branch --commit-filter '
+        if [ "$GIT_AUTHOR_EMAIL" = "old@email" ];
+        then
+                GIT_AUTHOR_NAME="new name";
+                GIT_AUTHOR_EMAIL="new@email";
+                git commit-tree "$@";
+        else
+                git commit-tree "$@";
+        fi' HEAD
+
+git update-ref -d refs/original/refs/heads/master
+git push --force --tags origin 'refs/heads/*'
+```
+[全局性地更换电子邮件地址](http://git-scm.com/book/zh/v1/Git-工具-重写历史)
+[Change the author of a commit in Git](http://stackoverflow.com/a/750182/2722270)
+
 ---
 
 by li2 上海闸北
