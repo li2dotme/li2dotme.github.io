@@ -53,9 +53,9 @@ public class CrimeFragment extends Fragment {
 	    public void onTextChanged(...) {}
 	    public void beforeTextChanged(...) {}
 	    public void afterTextChanged(...) {}
-	});
+        });
 
-	return v;
+        return v;
     }
 
 }
