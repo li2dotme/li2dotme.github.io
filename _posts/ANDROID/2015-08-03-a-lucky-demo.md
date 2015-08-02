@@ -5,7 +5,7 @@ category: ANDROID
 tags: [ ]
 ---
 
-![A Lucky Demo](/Demos/TalkingBook21.apk)
+[A Lucky Demo](/Demos/TalkingBook21.apk)
 音频和文本同步的流程理顺了，然后需要做成我需要的UI。
 这样。
 
