@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 一个英文有声读物App
+title: 一个英文有声读物App
 category: ANDROID
 tags: [ ]
 ---
