@@ -1,7 +1,6 @@
 ---
 layout: post
-title: 【笔记】创建你的第一个应用 - Building Your First App
-filename: 2014-09-03-firstapp.md
+title: 【笔记】App Training - 创建你的第一个应用
 category: ANDROID
 tags: []
 ---

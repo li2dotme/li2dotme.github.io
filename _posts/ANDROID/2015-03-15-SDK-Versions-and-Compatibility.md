@@ -24,6 +24,8 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ```
 
+<!-- more -->
+
 ---
 
 整理笔记时参考了如下资料：

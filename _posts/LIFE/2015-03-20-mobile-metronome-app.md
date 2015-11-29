@@ -1,12 +1,9 @@
 ---
 layout: post
 title: 手机上的节拍器
-category: Music
+category: LIFE
 tags: [ ]
 ---
-
-![image](/images/Music/mobile-metronome-app.png)
-2015-03-19
 
 单音（第一把位大调七声音阶）练习第2天
 下巴有些僵硬、酸胀；嘴唇容易粘住；气息不稳；口型不稳；找不准位置。
@@ -19,4 +16,10 @@ tags: [ ]
 要多加练习，以期找位置像敲键盘盲打一样快！
 2015-03-20
 
+<!-- more -->
+![image](/images/Life/mobile-metronome-app.png)
+
+------
+
 li2- 沪北
+

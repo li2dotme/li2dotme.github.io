@@ -7,8 +7,6 @@ tags: [ ]
 
 使用 ListFragment(Fragment 的子类) 构建列表视图，
 
-
-
 ## 使用 ArrayList<E> 和 Singleton 构建应用的模型层
 
 ArrayList<E>是一个支持存放指定数据类型对象的Java有序数组类，具有获取、新增及删除数组中元素的方法。
@@ -42,6 +40,8 @@ CrimeLab 类的构造方法需要一个 Context 参数。使用 Context参数,�
 
 ## 创建 ListFragment
 ListFragment 继承自 Fragment, 默认具有一个全屏的 ListView 布局。它的`onCreate()`方法继承自`Fragment`.
+
+<!-- more -->
 
 ```Java
 // CrimeListFragment.java

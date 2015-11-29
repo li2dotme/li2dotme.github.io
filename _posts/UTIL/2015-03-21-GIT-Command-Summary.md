@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【笔记】Git使用总结
+title: Git使用总结
 category: UTIL
 tags: [  ]
 
@@ -21,6 +21,8 @@ fatal: Could not read from remote repository.
 ```
 接下来需要**[按照官网的教程生成SSH key](https://help.github.com/articles/generating-ssh-keys/)**
 这样就可以避免每次push需要输入用户名和密码。
+
+<!-- more -->
 
 *整理于2015-03-21*
 

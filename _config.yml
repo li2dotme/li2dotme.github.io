@@ -85,3 +85,7 @@ bing_verify:
 
 include: []
 exclude: ["README.md"]
+
+
+# For jekyll-3.0
+gems: [jekyll-paginate]

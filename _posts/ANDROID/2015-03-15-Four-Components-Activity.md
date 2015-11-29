@@ -17,6 +17,7 @@ eclipse可以自动生成getter和setter方法。
 介绍了另一种资源文件：图片资源文件，添加和引用的方法。
 扩展练习：使用ImageButton、为TextView添加监听器、隐藏的与activity lifecycle有关的bug。
 
+<!-- more -->
 
 ## 第4章 android应用的调试
 如何处理应用bug. 如何使用LogCat、Android Lint和Eclipse内置的代码调试器。

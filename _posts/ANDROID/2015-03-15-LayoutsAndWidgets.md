@@ -30,6 +30,8 @@ Android提供了密度无关的尺寸单位（density-independent dimension unit
 何不打算按像素值指定尺寸的情况下，通常都使用dp这种单位。1dp单位在设备屏幕上总是等于1/160英寸。
 - sp：scale-independent pixel，缩放无关像素。设置屏幕上的字体大小。
 
+<!-- more -->
+
 ### Android开发设计原则
 
 用16dp单位值设定边距尺寸。该单位值的设定遵循了Android的“48dp调和”设计原则。

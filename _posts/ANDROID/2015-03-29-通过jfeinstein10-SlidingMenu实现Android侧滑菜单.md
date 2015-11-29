@@ -27,20 +27,26 @@ Refer to [How to Integrate this Library into Your Projects](https://github.com/j
 
 define a fragment container layout `fragment_menu.xml`:
 
+<!-- more -->
+
+```xml
     <?xml version="1.0" encoding="utf-8"?>
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+```
 
 call `menu.setMenu(R.layout.fragment_menu);` **to add the fragment container view to your activity**,
 
 Lastly, **add your `SampleListFragment` to your activity's fragment manager**:
 
+```java
 		getSupportFragmentManager()
 		.beginTransaction()
 		.replace(R.id.fragmentContainer, new SampleListFragment())
 		.commit();
+```
 
 ------
 

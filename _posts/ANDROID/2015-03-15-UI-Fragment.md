@@ -17,6 +17,8 @@ Fragment不具有在屏幕上显示视图的能力。因此，只有将它的视
 
 首先需要在activity视图层级结构中为fragment视图安排位置，**创建fragment容器布局**：
 
+<!-- more -->
+
 ```xml
 activity_crime.xml
 <FragmeLayout xmlns:android="http://schemas.android.com/apk/res/android"
