@@ -53,6 +53,7 @@ App用于探测Android设备I2C总线、读取/设置I2C设备寄存器值，并
 之所以开发这个App，是因为我负责的驱动模块出现了问题，需要和硬件工程师一起排查软、硬问题。而硬件工程师不熟悉命令行、ADB，并且使用ADB打印的Log不便于处理。
 
 在2013年8月完成第1版，这是第1次开发Android App（不懂Android，不懂Java，全靠搜索，代码非常糟糕），然后在2015年10月重构了代码，[你可以从这里获取源码](https://github.com/li2/Android_I2C_Tool)，核心是通过 `Runtime.getRuntime().exec()` 执行命令行工具，然后读取进程的标准输出/标准错误，再做进一步的解析处理。
+
 ![i2cset](/images/career/set.png)
 
 在驱动开发的这段时间里，还写过一个简单的App，用来监听SD卡插拔事件，然后执行SD卡中的脚本文件。也是为了方便测试驱动。[你可以从这里获取源码](https://github.com/li2/Autorun_Script_When_Sdcard_Pluged)。
@@ -67,10 +68,12 @@ App用于探测Android设备I2C总线、读取/设置I2C设备寄存器值，并
 
 一款运动App，但它本身不产生数据，数据来源于我厂的一款运动手表，主要功能是向手表的用户展示数据。
 App的功能模块包括：从手表抓取数据、上传数据到云端、SQLite数据库、OAuth2.0、UI。
+我负责完成其中大部分的UI模块，下图是UI的版本变化：
 
-我负责完成其中大部分的UI模块，下图是UI的版本变化：
 ![magellan-active-versions](/images/career/magellan-active-versions.png)
+
 下面是GIF演示：
+
 ![android-gif-demo](/images/career/magellan-active-android-gif-demo.gif)
 
 图示的界面主要使用了`GridView`, `ViewPager`, `Fragment`，使用了开源库`holographlibrary`和`viewpagerindicator`。用户点击day/30day按钮时切换到对应图表。
@@ -85,10 +88,12 @@ App从2014年10月开始开发，小组4个人；2015年4月份左右在Google P
 
 这个App实现了《麦田守望者》全部语音和文本的同步：**被读到的单词可以高亮显示，点击单词可以跳到对应的音频位置播放**。之所以开发这个App，是因为想练习听力，顺带练习编程。我在SegmentFault的专栏里，对开发过程做了详细的记录和分析，[你可以点击这里阅读](http://segmentfault.com/a/1190000003498111)，然后[从这里获取源码](https://github.com/li2/TalkingBook21_AndroidApp)。
 下面是GIF演示：
+
 ![demo](/images/career/TalkingBook21_demo.gif)
 
 
 开发这个App的过程中，在一个开源代码的基础上**实现了一个类似网易云音乐歌词功能的 LrcView**，完成「上下滚动歌词」功能： 「上下滚动歌词」满足用户查看「非当前正在播放处歌词」的需求，超时后「上下滚动歌词」后回滚到「当前正在播放处」。本来想用它展示英文文本，后来弃用。[你可以从这里查阅源码](https://github.com/li2/Android_Lrc_View)。
+
 ![lrcview](/images/career/lrcview.png)
 
 
@@ -99,6 +104,7 @@ App从2014年10月开始开发，小组4个人；2015年4月份左右在Google P
 
 在开发Magellan Active Android版本时，小组同步开发iOS版本，按照相同的UI Spec。使用`UICollectionView`完成了主界面的搭建，所有的graph通过纯代码自定义cell实现。
 下面是GIF演示：
+
 ![ios-sleep](/images/career/magellan-active-ios-gif-demo.gif)
 
 我目前对iOS的了解还非（基）常（本）粗（靠）浅（搜）。
