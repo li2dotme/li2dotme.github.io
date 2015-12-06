@@ -4,13 +4,28 @@ title: Career 3th
 permalink: /3th/
 ---
 
-这个页面记录了我在二零一零年从一个二本电子信息工程专业毕业后来上海，迄今五年的工作历程，以时间为轴。
 
+这个页面记录了我在二零一零年从一个二本电子信息工程专业毕业后来上海，迄今五年的工作历程，以时间为轴。
 *PS: 好多简历模板是先写最近的职业经历，降序排列。但我觉得自己的每个阶段都是有衔接的，所以就按升序排列了。如果您对之前的不感兴趣，[请直接跳到最后，传送门](http://li2.me/career-3th/#top2)*  : )
 
-[我的GitHub](https://github.com/li2)
-[我的SegmentFault](http://segmentfault.com/u/li2)
-[我的StackOverFlow](http://stackoverflow.com/users/2722270/li2)
+## 综述
+
+- 我有两年的 Android 开发经验，爱 Android。
+- 我（自认为）对 Android ViewPager, Fragment, Service 是有深入了解的，[我的 SegmentFault 专栏](http://segmentfault.com/blog/li2)10篇文章里有6篇是对 Fragment 的总结；[我回答的85个问题中有9个](http://segmentfault.com/a/1190000004063006#articleHeader19)和 Fragment 有关，其中7个被采纳。
+- 我（自认为）是扇贝忠实用户（到12月10日就连续打卡100天了 算不算？
+
+
+一些主观上的判断：『是否热爱编程』、『是否能承担工作压力』、『是否具备良好的沟通能力和协作能力』，以及一些关于技术能力的客观判断，
+你可以从我的社交账号中得到更多信息：
+
+- [我的GitHub](https://github.com/li2)
+- [我的SegmentFault](http://segmentfault.com/u/li2)
+- [我的StackOverFlow](http://stackoverflow.com/users/2722270/li2)
+- [我的微博](http://weibo.com/liweiyi1989)
+
+除了Java理论底子薄、不会使用gradle、不懂App的分发流程外，我觉得自己还是很匹配扇贝对Android开发工程师的岗位要求的（在拉勾网上的招聘说明）。
+我想特别提到一个在业余时间开发的英文有声书App，实现了《麦田守望者》全部语音和文本的同步：被读到的单词可以高亮显示，点击单词可以跳到对应的音频位置播放。
+所以，我觉得自己很适合扇贝。当然希望扇贝也这么认为。以下是我的职业经历。
 
 
 ## 2010.12~2012.11 单片机软件
@@ -42,7 +57,7 @@ permalink: /3th/
 - 使用命令行、Shell；
 - SVN；
 
-这个阶段整理出十几篇笔记：[『Linux设备驱动程序笔记』](http://li2.me/ldd/Linux-Device-Drivers/) [『Ubuntu分类』](http://li2.me/categories/#util) [『Shell分类』](http://li2.me/categories/#shell)
+这个阶段整理出十几篇笔记：[『Linux设备驱动程序笔记』](http://li2.me/ldd/Linux-Device-Drivers/) [『Util分类』](http://li2.me/categories/#util) [『Shell分类』](http://li2.me/categories/#shell)
 
 
 ## 2013.08~迄今 Android App
@@ -111,4 +126,10 @@ App从2014年10月开始开发，小组4个人；2015年4月份左右在Google P
 
 ------
 
-结束。呃 我是不是写的太啰嗦了（好吧 也许你只浏览了一小部分 就关闭页面了呢（。
+## 期望
+
+我目前在上海，当前的工作合约于2016年1月6日结束，希望能在南京开始下一个阶段的职业生涯。
+如果您认为我符合扇贝的职位要求，并且您也觉得我还不错，我希望能成为扇贝一员，并且希望能得到您为这个职位提供的高位薪资（16k），从扇贝产品的使用者变成100%的参与者。
+
+期待来自扇贝的回复 : )
+2015-12-06 沪北
