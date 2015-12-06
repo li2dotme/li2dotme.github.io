@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Career 3th
-permalink: /3th
+permalink: /3th/
 ---
 
 这个页面记录了我在二零一零年从一个二本电子信息工程专业毕业后来上海，迄今五年的工作历程，以时间为轴。
