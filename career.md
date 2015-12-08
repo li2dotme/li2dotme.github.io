@@ -20,6 +20,7 @@ permalink: /career/
 - 掌握 Android 消息处理机制（Handler、Message、Looper）；
 - 掌握 Android 多线程实现方式（HandlerThread/Thread/AsyncTask）；
 - 掌握 Android 常用的数据存储方式（SQLite、SharedPreference、JSON、Storage）；
+- 研读过 Android Framework 层代码（Handler, Looper, HandlerThread, IntentService）；
 
 
 你还可以从我的社交账号中得到更多信息：
