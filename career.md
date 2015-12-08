@@ -12,7 +12,15 @@ permalink: /career/
 
 - 2年的 ARM32 位单片机（Cortex M3）开发经验、1.5年的 Android 驱动开发经验.
 - 2年的 Android App 开发经验，1年的 iOS App 开发经验。
-- 我对 Android ViewPager, Fragment, Service 还是有深入了解的，[我的 SegmentFault 专栏](http://segmentfault.com/blog/li2)10篇文章里有6篇是对 Fragment 的总结；[我回答的85个问题中有9个](http://segmentfault.com/a/1190000004063006#articleHeader19)和 Fragment 有关，其中7个被采纳。
+- 对 Android ViewPager, Fragment 还是有深入了解的，[我的 SegmentFault 专栏](http://segmentfault.com/blog/li2)10篇文章里有6篇是对 Fragment 的总结；[我回答的85个问题中有9个](http://segmentfault.com/a/1190000004063006#articleHeader19)和 Fragment 有关，其中7个被采纳。
+- 对 Android 生命周期和内存泄露有清晰的认识；
+- 掌握 Android 常用的设计模式（单例模式、适配器模式、模板模式、MVC）；
+- 掌握 Android 常用组件（Activity、IntentService/Bound Service、Broadcast、常用的UI组件和布局）的用法；
+- 掌握 Android 自定义View；
+- 掌握 Android 消息处理机制（Handler、Message、Looper）；
+- 掌握 Android 多线程实现方式（HandlerThread/Thread/AsyncTask）；
+- 掌握 Android 常用的数据存储方式（SQLite、SharedPreference、JSON、Storage）；
+
 
 你还可以从我的社交账号中得到更多信息：
 
