@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Career 3th
-permalink: /3th/
+permalink: //
 ---
 
 

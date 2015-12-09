@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Career
-permalink: /career/
+permalink: //
 ---
 
 
